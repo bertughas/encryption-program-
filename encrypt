@@ -1,0 +1,19 @@
+import random
+import string
+
+chars=" "+ string.punctuation + string.ascii_letters + string.digits
+    
+chars=list(chars)
+key=chars.copy()
+
+random.shuffle(key)
+
+plain_text=input("Please enter your text:")
+encrypted_text=""
+for letter in plain_text:
+    index=chars.index(letter)
+    encrypted_text+=key[index]
+    
+    
+print(f"Original message:{plain_text}")
+print(f"Encrytped message:{encrypted_text}")
